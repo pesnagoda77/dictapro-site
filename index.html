@@ -19,39 +19,127 @@
   .card { border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin:18px 0; background:rgba(255,255,255,.03); }
   a { color:var(--mint); }
   footer { margin-top:40px; padding-top:16px; border-top:1px solid var(--line); font-size:13px; color:var(--ink2); }
+  .nav { font-size:14px; margin-bottom:22px; }
 </style>
 </head>
 <body>
 <div class="wrap">
-<div style="font-size:14px;margin-bottom:22px">Политика конфиденциальности · <a href="./terms.html">Условия использования</a></div><h1>Политика конфиденциальности — ДиктаПро / DictaPro (проект)</h1>
-<p>Дата вступления в силу: 28.09.2026</p>
+<div class="nav">Политика конфиденциальности · <a href="./terms.html">Условия использования</a></div>
+
+<h1>Политика конфиденциальности — ДиктаПро / DictaPro</h1>
+<p>Редакция 2.0 от 27.11.2026. Дата вступления в силу: 27.11.2026.</p>
+
 <h2>Русский</h2>
-<h3>Какие данные мы собираем</h3>
-<p>ДиктаПро спроектировано так, чтобы ваши данные оставались вашими.</p>
-<p>1. Записи и расшифровки хранятся только на вашем устройстве. Мы не получаем к ним доступ, не загружаем их на свои серверы и не передаём третьим лицам.</p>
-<p>2. Ключи API провайдеров онлайн-расшифровки, которые вы вводите сами, хранятся только на устройстве.</p>
-<p>3. Покупки и подписки обрабатываются Google Play / App Store. Мы получаем только факт наличия подписки, без платёжных данных.</p>
-<h3>Что отправляется на сервер (только с вашего согласия)</h3>
-<p>Функция «ИИ-итоги» (по подписке) отправляет ТЕКСТ расшифровки на наш сервер (dicta-summary.pesnagoda77.workers.dev) для генерации краткого содержания. Аудио не отправляется. Перед отправкой приложение показывает предупреждение и ждёт вашего подтверждения.</p>
-<p>Опциональная онлайн-расшифровка (если вы сами ввели ключ провайдера) отправляет аудио напрямую выбранному вами провайдеру (DeepSeek, Groq или Z.AI), минуя наши серверы.</p>
-<h3>Хранение данных</h3>
-<p>Все данные — на устройстве. Удаление приложения удаляет все данные.</p>
-<h3>Контакты</h3>
-<p>softdep@albatech.uz</p>
+
+<h3>1. Кто обрабатывает данные</h3>
+<p>Оператор — <b>ALBATECH GROUP, MCHJ</b> (Республика Узбекистан). Контакт по любым вопросам о данных: <a href="mailto:softdep@albatech.uz">softdep@albatech.uz</a>.</p>
+
+<h3>2. Коротко</h3>
+<p>Записи, расшифровки и созданные файлы остаются на устройстве Пользователя. Мы не имеем к ним доступа и не загружаем их на свои серверы. На сервер уходят только два технических сценария: проверка покупки и подготовка итогов по явному действию Пользователя.</p>
+
+<h3>3. Что обрабатывается только на устройстве</h3>
+<ul>
+<li>аудиозаписи и файлы — в папке «Документы/DictaPro» на телефоне;</li>
+<li>тексты расшифровок, спикеры, таймкоды, теги, история записей;</li>
+<li>локальные итоги записей (считаются на устройстве, без сети);</li>
+<li>настройки приложения и счётчики использования;</li>
+<li>ключи доступа к сторонним сервисам распознавания, если Пользователь вводил их сам.</li>
+</ul>
+
+<h3>4. Проверка покупки</h3>
+<p>4.1. Чтобы подтвердить оплату и не потерять купленное при переустановке, приложение обращается к нашему серверу. Передаётся минимальный набор технических данных:</p>
+<ul>
+<li><b>случайный идентификатор установки</b> — 16 случайных байт, создаются на устройстве, не являются ни аппаратным идентификатором, ни рекламным ID; сбрасываются вместе с приложением;</li>
+<li><b>идентификатор товара</b> (например, код тарифа или пакета);</li>
+<li><b>токен покупки</b>, который выдаёт Google Play при оплате.</li>
+</ul>
+<p>4.2. <b>Содержимое записей, тексты расшифровок, имена, контакты, платёжные данные, рекламный идентификатор и геолокация при проверке покупки не передаются.</b></p>
+<p>4.3. На сервере токен покупки хранится в виде необратимого хеша и служит только для того, чтобы одна и та же покупка не была зачтена дважды. Связка «пользователь — покупка» у нас не создаётся.</p>
+<p>4.4. Основание обработки — исполнение договора (подтверждение оплаты) и наш законный интерес в защите от повторного зачёта одного и того же чека.</p>
+
+<h3>5. Подготовка итогов</h3>
+<p>5.1. Функция «Итоги на сервере» запускается только по нажатию Пользователя и только после подтверждения в диалоге. Передаются <b>текст расшифровки</b> и <b>язык</b>. Аудио не передаётся никогда.</p>
+<p>5.2. Текст обрабатывается и возвращается в виде итога; <b>мы его не сохраняем</b> и не ведём журналов содержимого.</p>
+<p>5.3. Локальные итоги доступны без интернета и без передачи данных. Пользователь может пользоваться приложением, никогда не включая серверные итоги.</p>
+<p>5.4. Основание обработки — согласие Пользователя, которое он выражает действием: нажатием кнопки и подтверждением в диалоге.</p>
+
+<h3>6. Кому передаются данные</h3>
+<ul>
+<li><b>Cloudflare</b> — хостинг наших серверных функций и модель обработки текста для итогов; выступает обработчиком по договору;</li>
+<li><b>Google</b> — платформа распространения и платежей (Google Play), а также проверка действительности покупки.</li>
+</ul>
+<p>Иным лицам данные не передаются, не продаются и не используются для рекламы.</p>
+
+<h3>7. Чего мы не делаем</h3>
+<ul>
+<li>не собираем аналитику поведения, не подключаем рекламные и краш-репортинг SDK;</li>
+<li>не читаем записи и расшифровки Пользователя;</li>
+<li>не передаём данные для обучения моделей;</li>
+<li>не требуем создания аккаунта.</li>
+</ul>
+
+<h3>8. Сроки хранения и удаление</h3>
+<p>8.1. Записи серверных итогов не хранятся. Служебные записи о покупках и счётчиках хранятся не дольше <b>90 дней</b> после последней активности.</p>
+<p>8.2. Данные на устройстве удаляются вместе с приложением или средствами самой системы. Файлы записей сохраняются в «Документах» до удаления их Пользователем.</p>
+<p>8.3. Удаление серверных записей по запросу: напишите на <a href="mailto:softdep@albatech.uz">softdep@albatech.uz</a>, указав идентификатор установки из раздела «О программе».</p>
+
+<h3>9. Права Пользователя</h3>
+<p>Пользователь вправе запросить сведения об обработке, исправление и удаление своих данных, отозвать согласие на серверные итоги (просто не пользуясь функцией). Запросы — на указанную почту, срок ответа — 30 дней.</p>
+
+<h3>10. Дети</h3>
+<p>Приложение не адресовано детям и не собирает данные о детях осознанно. Родителям следует использовать блокировки устройства, если приложением пользуется ребёнок.</p>
+
+<h3>11. Безопасность</h3>
+<p>Передача данных идёт по защищённому соединению (TLS). Секреты и ключи хранятся на серверной стороне и не попадают в приложение.</p>
+
+<h3>12. Изменения</h3>
+<p>Актуальная редакция всегда на этой странице. О существенных изменениях сообщаем в приложении до их вступления в силу.</p>
+
 <h2>English</h2>
-<h3>What we collect</h3>
-<p>DictaPro is designed so your data stays yours.</p>
-<p>1. Recordings and transcripts are stored on your device only. We have no access to them, they are never uploaded to our servers, and never shared with third parties.</p>
-<p>2. API keys for online transcription providers are entered by you and stored on the device only.</p>
-<p>3. Purchases and subscriptions are processed by Google Play / App Store. We receive only the subscription status, no payment data.</p>
-<h3>What is sent to our server (only with your consent)</h3>
-<p>The «AI summaries» feature (subscription) sends the TRANSCRIPT TEXT to our server (dicta-summary.pesnagoda77.workers.dev) to generate a summary. Audio is never sent. The app shows a warning and waits for your confirmation before sending.</p>
-<p>Optional online transcription (if you provide a provider key) sends audio directly to the provider you chose (DeepSeek, Groq or Z.AI), bypassing our servers.</p>
-<h3>Data retention</h3>
-<p>All data lives on the device. Uninstalling the app deletes all data.</p>
-<h3>Contact</h3>
-<p>softdep@albatech.uz</p>
-<footer>ДиктаПро · запись и расшифровка выполняются на устройстве. Страница обновлена: 26.11.2026 · <a href="./terms.html">Условия использования</a></footer>
+
+<h3>1. Who processes data</h3>
+<p>Controller: <b>ALBATECH GROUP, MCHJ</b> (Republic of Uzbekistan). Contact: <a href="mailto:softdep@albatech.uz">softdep@albatech.uz</a>.</p>
+
+<h3>2. In short</h3>
+<p>Recordings, transcripts and exported files stay on your device. We have no access to them and do not upload them to our servers. Two technical flows reach our server: purchase verification and summaries you explicitly request.</p>
+
+<h3>3. On-device only</h3>
+<p>Audio and files in “Documents/DictaPro”, transcripts, speakers, timecodes, tags, local summaries computed on the device, app settings and counters, and any provider keys you enter yourself.</p>
+
+<h3>4. Purchase verification</h3>
+<p>To confirm payment and to keep purchases across reinstalls, the app contacts our server with the minimum technical data:</p>
+<ul>
+<li><b>a random installation identifier</b> — 16 random bytes generated on the device; not a hardware ID and not an advertising ID; reset when the app is reinstalled;</li>
+<li><b>the product identifier</b> (plan or pack code);</li>
+<li><b>the purchase token</b> issued by Google Play.</li>
+</ul>
+<p><b>Recordings, transcript text, names, contacts, payment data, advertising identifiers and location are not sent for purchase verification.</b> On the server the purchase token is stored as an irreversible hash, used only to prevent the same purchase from being credited twice. We do not create a “user — purchase” link. Legal bases: performance of contract (payment confirmation) and our legitimate interest in preventing duplicate credit of the same receipt.</p>
+
+<h3>5. Summaries</h3>
+<p>The server summary feature runs only on your tap and after confirmation in a dialog. It sends <b>the transcript text</b> and <b>the language</b>. Audio is never sent. The text is processed and returned as a summary; <b>we do not store it</b> and keep no content logs. Local summaries work offline with no data transfer. You can use the app without ever enabling server summaries. Legal basis: your consent given by the action itself.</p>
+
+<h3>6. Recipients</h3>
+<p>Cloudflare (hosting of our server functions and the text-processing model, acting as a processor) and Google (Play distribution, payments and purchase validation). No other recipients; no sale of data; no advertising use.</p>
+
+<h3>7. What we do not do</h3>
+<p>No behavioural analytics, no advertising or crash-reporting SDKs, no reading of your recordings, no use of your data to train models, no account required.</p>
+
+<h3>8. Retention and deletion</h3>
+<p>Summary text is not stored. Service records about purchases and counters are kept no longer than <b>90 days</b> after the last activity. On-device data is removed with the app or via the system; recording files remain in Documents until you delete them. To delete server records, email <a href="mailto:softdep@albatech.uz">softdep@albatech.uz</a> with the installation identifier from “About”.</p>
+
+<h3>9. Your rights</h3>
+<p>You may request information, correction or deletion, and withdraw consent for server summaries by not using the feature. Requests to the address above; we answer within 30 days.</p>
+
+<h3>10. Children</h3>
+<p>The app is not directed to children and does not knowingly collect children’s data.</p>
+
+<h3>11. Security</h3>
+<p>Data in transit is protected with TLS. Secrets and keys are held server-side and never shipped in the app.</p>
+
+<h3>12. Changes</h3>
+<p>The current version is always on this page; material changes are announced in the app before they take effect.</p>
+
+<footer>ДиктаПро · Политика конфиденциальности, редакция 2.0 от 27.11.2026 · <a href="./terms.html">Условия использования</a></footer>
 </div>
 </body>
 </html>
